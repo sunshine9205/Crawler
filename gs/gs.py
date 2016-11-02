@@ -14,7 +14,7 @@ def gs(username, password, dirname):
 	}
 	login_url = 'https://gsdb.bjtu.edu.cn/client/login/'
 	score_url = 'https://gsdb.bjtu.edu.cn/score/history/'
-	table_head = ['course_name','teacher','term','porper','credit','score']
+	table_head = ['课程名','教师','学期','课程属性','学分','分数']
 	table_index = [1, 3, 4, 7, 8, 10]
 
 	session = requests.Session()
@@ -55,8 +55,8 @@ def gs(username, password, dirname):
 
 if __name__ == '__main__':
 	dirname = 'C:/Users/sun/Desktop/'
-	username = '14120357'
-	password = 'sun91311'
+	username = '********'
+	password = '--------'
 	gs(username, password, dirname)
 
 
