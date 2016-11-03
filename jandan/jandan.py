@@ -14,7 +14,6 @@ def jandan(start_page, end_page, dirname):
 		r = requests.get('http://jandan.net/pic/page-'+ str(page) +'#comments', headers = headers)
 		soup = BeautifulSoup(r.text, 'html.parser')
 		
-		
 		for i in soup.select('div.text'):
 			try:
 				img_url = i.find('p').find('a')['href']
@@ -27,11 +26,13 @@ def jandan(start_page, end_page, dirname):
 						f.write(chunk)
 				print('--------success!--------')
 				count += 1
-			except Exception(e):
+			except Exception as e:
 				print(e)
 				print('-'*50)
 				print('continue: ' + str(count))
 				continue
+		
+	print('-----------------Finished------------------------')
 
 
 if __name__ == '__main__':
