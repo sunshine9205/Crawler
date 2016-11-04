@@ -23,7 +23,7 @@ def gs(username, password, dirname):
 
 	soup = BeautifulSoup(resp.text, 'html.parser')
 
-	workbook = xlwt.Workbook()
+	workbook = xlwt.Workbook(encoding='utf-8')
 	sheet = workbook.add_sheet(username)
 
 	for i in range(6):
