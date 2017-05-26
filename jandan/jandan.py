@@ -22,8 +22,10 @@ def jandan(start_page, end_page, dirname):
 				filename = dirname + str(count) + img_url[-4:]
 				print('wrinting ' + filename)
 				with open(filename, 'wb') as f:
-					for chunk in requests.get(img_url, stream = True).iter_content(chunk_size = 1024):
-						f.write(chunk)
+					# for chunk in requests.get(img_url, stream = True).iter_content(chunk_size = 1024):
+					# 	f.write(chunk)
+					img = requests.get(img_url, headers = headers)
+					f.write(img.content)
 				print('--------success!--------')
 				count += 1
 			except Exception as e:
